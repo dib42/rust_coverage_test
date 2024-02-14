@@ -18,6 +18,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: coverage_test # Set the correct path to your Rust project directory
+      - name: Set up Rust environment
+        run: |
+          cd coverage_test  # Move into the Rust project directory
+          rustup update stable
       - name: Build
         run: cargo build --verbose
       - name: Run tests
