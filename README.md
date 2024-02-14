@@ -1,0 +1,1 @@
+# rust_coverage_test
