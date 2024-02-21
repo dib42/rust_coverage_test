@@ -12,10 +12,14 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    container:
+      image: rust:1.76.0-bookworm
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       - name: Set up Rust environment
         run: |
           cd coverage_test  # Move into the Rust project directory
